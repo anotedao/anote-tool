@@ -32,8 +32,8 @@ func main() {
 					// }
 
 					if i < len(duplicate)-1 {
-						// db.Unscoped().Delete(d)
-						log.Printf("d: %d %s %s %d", d.TelegramId, d.MiningTime, d.Address, d.MinedTelegram)
+						db.Unscoped().Delete(d)
+						// log.Printf("d: %d %s %s %d", d.TelegramId, d.MiningTime, d.Address, d.MinedTelegram)
 					} else {
 						log.Printf("%d %s %s %d", d.TelegramId, d.MiningTime, d.Address, d.MinedTelegram)
 					}
