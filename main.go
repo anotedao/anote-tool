@@ -26,6 +26,7 @@ func main() {
 			// biggest := uint64(0)
 			if len(duplicate) > 1 {
 				for i, d := range duplicate {
+					log.Println(i)
 					// if d.MinedTelegram > biggest {
 					// 	biggest = d.MinedTelegram
 					// }
