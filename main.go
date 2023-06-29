@@ -23,11 +23,23 @@ func main() {
 			var duplicate []*Miner
 			db.Where("telegram_id = ?", m.TelegramId).Find(&duplicate)
 			// basic := &Miner{}
+			biggest := uint64(0)
 			if len(duplicate) > 1 {
 				for _, d := range duplicate {
-					// if d.MinedTelegram > basic.MinedTelegram {
-					// 	// basic = d
-					// }
+					if d.MinedTelegram > biggest {
+						biggest = d.MinedTelegram
+					}
+
+					log.Printf("%s %d %d", d.Address, d.TelegramId, d.MinedTelegram)
+				}
+
+				for _, d := range duplicate {
+					if d.MinedTelegram < biggest {
+						d.MinedTelegram = biggest
+						if err := db.Save(d).Error; err != nil {
+							log.Println(err)
+						}
+					}
 
 					log.Printf("%s %d %d", d.Address, d.TelegramId, d.MinedTelegram)
 				}
