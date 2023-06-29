@@ -25,12 +25,16 @@ func main() {
 			// basic := &Miner{}
 			// biggest := uint64(0)
 			if len(duplicate) > 1 {
-				for _, d := range duplicate {
+				for i, d := range duplicate {
 					// if d.MinedTelegram > biggest {
 					// 	biggest = d.MinedTelegram
 					// }
 
-					log.Printf("%s %s %d %d", d.MiningTime, d.Address, d.TelegramId, d.MinedTelegram)
+					if i < len(duplicate)-1 {
+						log.Printf("delete: %s %s %d %d", d.MiningTime, d.Address, d.TelegramId, d.MinedTelegram)
+					} else {
+						log.Printf("%s %s %d %d", d.MiningTime, d.Address, d.TelegramId, d.MinedTelegram)
+					}
 				}
 
 				// for _, d := range duplicate {
