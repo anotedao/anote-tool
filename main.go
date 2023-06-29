@@ -2,7 +2,6 @@ package main
 
 import (
 	"log"
-	"strings"
 
 	"gorm.io/gorm"
 )
@@ -26,21 +25,22 @@ func main() {
 			basic := &Miner{}
 			if len(duplicate) > 1 {
 				// log.Printf("%s %d %d", m.Address, m.TelegramId, m.MinedTelegram)
-				for _, d := range duplicate {
-					if d.MinedTelegram > basic.MinedTelegram {
-						basic = d
-					}
-				}
+				// for _, d := range duplicate {
+				// 	if d.MinedTelegram > basic.MinedTelegram {
+				// 		basic = d
+				// 	}
+				// }
 
-				for _, d := range duplicate {
-					if !strings.HasPrefix(basic.Address, "3A") && strings.HasPrefix(d.Address, "3A") {
-						basic.Address = d.Address
-					}
+				// for _, d := range duplicate {
+				// 	if !strings.HasPrefix(basic.Address, "3A") && strings.HasPrefix(d.Address, "3A") {
+				// 		basic.Address = d.Address
+				// 	}
 
-					if err := db.Save(basic).Error; err != nil {
-						log.Println(err)
-					}
-				}
+				// 	if err := db.Save(basic).Error; err != nil {
+				// 		log.Println(err)
+				// 	}
+				// }
+				counter++
 			}
 		}
 	}
