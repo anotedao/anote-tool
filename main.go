@@ -29,7 +29,7 @@ func main() {
 					// 	// basic = d
 					// }
 
-					log.Printf("%s %d %d", m.Address, m.TelegramId, m.MinedTelegram)
+					log.Printf("%s %d %d", d.Address, d.TelegramId, d.MinedTelegram)
 				}
 				// 	if !strings.HasPrefix(basic.Address, "3A") && strings.HasPrefix(d.Address, "3A") {
 				// 		basic.Address = d.Address
