@@ -31,9 +31,9 @@ func main() {
 					// }
 
 					if i < len(duplicate)-1 {
-						log.Printf("delete: %s %s %d %d", d.MiningTime, d.Address, d.TelegramId, d.MinedTelegram)
+						log.Printf("delete: %d %s %s %d", d.TelegramId, d.MiningTime, d.Address, d.MinedTelegram)
 					} else {
-						log.Printf("%s %s %d %d", d.MiningTime, d.Address, d.TelegramId, d.MinedTelegram)
+						log.Printf("%d %s %s %d", d.TelegramId, d.MiningTime, d.Address, d.MinedTelegram)
 					}
 				}
 
