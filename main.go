@@ -24,12 +24,13 @@ func main() {
 			db.Where("telegram_id = ?", m.TelegramId).Find(&duplicate)
 			// basic := &Miner{}
 			if len(duplicate) > 1 {
-				// log.Printf("%s %d %d", m.Address, m.TelegramId, m.MinedTelegram)
-				// for _, d := range duplicate {
-				// 	if d.MinedTelegram > basic.MinedTelegram {
-				// 		basic = d
-				// 	}
+				for _, d := range duplicate {
+					// if d.MinedTelegram > basic.MinedTelegram {
+					// 	// basic = d
+					// }
 
+					log.Printf("%s %d %d", m.Address, m.TelegramId, m.MinedTelegram)
+				}
 				// 	if !strings.HasPrefix(basic.Address, "3A") && strings.HasPrefix(d.Address, "3A") {
 				// 		basic.Address = d.Address
 				// 	}
