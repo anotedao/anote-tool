@@ -21,7 +21,7 @@ func main() {
 			var duplicate []*Miner
 			db.Where("telegram_id = ?", m.TelegramId).Find(&duplicate)
 			if len(duplicate) > 1 {
-				log.Println("%s %d", m.Address, m.MinedTelegram)
+				log.Printf("%s %d", m.Address, m.MinedTelegram)
 			}
 		}
 	}
