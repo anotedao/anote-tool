@@ -41,6 +41,6 @@ func main() {
 	// 	}
 	// }
 
-	val := int64(Multi8)
-	dataTransaction("%s__price", nil, &val, nil)
+	val := int64(Multi8 * 10)
+	dataTransaction("%s__tier", nil, &val, nil)
 }
